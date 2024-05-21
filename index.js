@@ -553,6 +553,7 @@ function mapDraw() {
 				});
 				var shingenIcon = L.marker(shingenLatLng, {icon: shingenIconImage }).addTo(map);
 			} else {
+				document.getElementById('notice').style.display = "block"
 				var initialLatLng = L.latLng(36.0, 138.0);
 				map.setView(initialLatLng, 0);
 				areaData = [0, 0]
