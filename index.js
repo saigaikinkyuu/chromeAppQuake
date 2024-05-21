@@ -1,7 +1,7 @@
 var map;
 var areaData = [0];
 
-function mapDraw(num) {
+function mapDraw() {
 	map = L.map('map', {
 		zoomControl: false,
 		minZoom: 7, // 最低ズームレベルを4に設定
@@ -913,14 +913,13 @@ function mapDraw(num) {
 	});
 }
 
-function changeMap(i) {
-	console.log("C," + i)
+function changeMap() {
 	map.remove();
-	mapDraw(i);
+	mapDraw();
 }
-
-function start() {
-	mapDraw(1);
-}
+var time = 3000
+var intervalId = setInterval(function() {
+	changeMap();
+}, time);
 
 start();
