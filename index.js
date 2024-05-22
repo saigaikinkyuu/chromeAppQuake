@@ -1,5 +1,6 @@
 var map;
 var areaData = [0];
+var eew = ""
 
 function mapDraw() {
 	map = L.map('map', {
@@ -918,12 +919,23 @@ function changeMap() {
 	map.remove();
 	mapDraw();
 }
+function checkInfo() {
+	$.getJSON("https://api.p2pquake.net/v2/history?codes=566&limit=1",
+		  function(datas) {
+			  if(datas[0]){
+			    if(datas[0].id !== eew && eew){
+				    eew = datas[0].id
+				    mapDraw();
+			    }
+			  }
+		  })
+}
 function start(){
 	mapDraw();
 	var time = 3000
-	var intervalId = setInterval(function() {
-		changeMap();
-	}, time);
+		var intervalId = setInterval(function() {
+			checkInfo();
+		}, time);
 }
 
 start();
