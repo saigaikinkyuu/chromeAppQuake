@@ -918,9 +918,12 @@ function changeMap() {
 	map.remove();
 	mapDraw();
 }
-var time = 3000
-var intervalId = setInterval(function() {
-	changeMap();
-}, time);
+function start(){
+	mapDraw();
+	var time = 3000
+	var intervalId = setInterval(function() {
+		changeMap();
+	}, time);
+}
 
 start();
