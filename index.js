@@ -54,7 +54,7 @@ function mapDraw() {
 	}
 
 	// AMeDAS データを読み込み、円を追加(https://api.p2pquake.net/v2/history?codes=556&limit=1)
-	$.getJSON("https://api.p2pquake.net/v2/history?codes=566&limit=1",
+	$.getJSON("https://api.p2pquake.net/v2/history?codes=556&limit=1",
 		function(datas) {
 			console.log(datas)
 			if (datas[0]) {
